@@ -10,7 +10,7 @@ int prime_check(const int n);
 
 /* WELCOME TO WHATEVER THIS CRACKHEAD CODE THIS IS
         Have a lovely time grading!
-        To get you started, I made a VLA!
+        To get you started, I made a VLA with stack memory!
         And I'm using the msys2 dll directly in the root! Horray!
 */
 
