@@ -10,8 +10,8 @@ int prime_check(const int n);
 
 /* WELCOME TO WHATEVER THIS CRACKHEAD CODE THIS IS
         Have a lovely time grading!
-  To get you started, I ran a variable into a stack memory array!
-    And I'm using the msys2 dll directly in the root! Horray!
+        To get you started, I made a VLA!
+        And I'm using the msys2 dll directly in the root! Horray!
 */
 
 long fibonacci(const int n)
