@@ -6,6 +6,13 @@
 //Found some math that I could never figure out that can find leingth of int
 #include <math.h>
 
+int prime_check(const int n);
+
+/* WELCOME TO WHATEVER THIS CRACKHEAD CODE THIS IS
+        Have a lovely time grading!
+  To get you started, I ran a variable into a stack memory array!
+    And I'm using the msys2 dll directly in the root! Horray!
+*/
 
 long fibonacci(const int n)
 {
@@ -18,6 +25,9 @@ long fibonacci(const int n)
         term = term + previousTerm;
         previousTerm = storeTerm;
     }
+    //I don't know where to read the asserts so I'll just do this instead
+    printf("%d", term);
+    getchar();
     return term;
 }
 
@@ -49,6 +59,8 @@ int reverse(const int n)
         printf("%c\n", sarray[strlen(sarray) - 1 - j]);
     }
 
+    printf("%d", atoi(sarray));
+    getchar();
     return atoi(sarray);
     
     /*
@@ -65,33 +77,69 @@ int reverse(const int n)
 
 int prime_factor(const int n)
 {
-    int theNumber = 0;
+    float theNumber = 0;
     int check = 0;
+    printf("%s\n", "Prime Factor Console");
 
-    for (int i = 1; i < n; i++)
+    for (int i = 2; i < n; i++)
     {
         check = 0;
         //This doesn't seem right, but I don't care to check.
         theNumber = n/i;
+        //Maybe remainder will fix that.
+        printf("%f\n", theNumber);
+        printf("%d\n", i);
         if(theNumber != 0 && theNumber != 1 && n%i == 0){
-            for (i = 2; i <= n / 2; ++i) {
-                // if n is divisible by i, then n is not prime
-                // change flag to 1 for non-prime number
-                if (n % i == 0) {
-                    check = 1;
-                    break;
-                }
-            }
+            check = prime_check(theNumber);
         }else check = 1;
         if(check == 0) break;
     }
     
-    return theNumber;
+    printf("%d", (int)theNumber);
+    getchar();
+    return (int)theNumber;
 }
 
 int prime_sum(const int n)
 {
-    int what = n;
+    int theNumber = 2;
+    int check = 0;
+    printf("%s\n", "Prime Sum Console");
+
+
+    if(n < 2) theNumber = 0;
+
+    for (int i = 3; i <= n; i++)
+    {
+        check = 0;
+        
+        if(prime_check(i) == 0) theNumber += i;
+    }
     
-    return 76127;
+    
+    printf("%d", theNumber);
+    getchar();
+    return theNumber;
+}
+
+int prime_check(const int n)
+{
+    printf("%s\n", "Do prime check");
+    int check = 0;
+    printf("%d\n", n);
+    for (int i = 2; i < n; i++) {
+        printf("%d\n", i);
+        //if n is divisible by i, then n is not prime
+        //change flag to 1 and return 1 for non-prime number
+        printf("%d\n", n % i);
+        if (n % i == 0) {
+            return 1;
+            check = 1;
+            printf("%s\n", "Not Prime");
+            break;
+        }
+    }
+    //the else is for returning something in all cases
+    if(check == 0) return 0;
+    else return 1;
 }
